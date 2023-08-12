@@ -19,6 +19,6 @@ int main(void)
 		putchar(CU);
 		CU++;
 	}
-	putchat('\n');
+	putchar('\n');
 	return (0);
 }
