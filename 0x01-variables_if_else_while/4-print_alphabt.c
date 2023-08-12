@@ -1,13 +1,13 @@
 #include <stdio.h>
 /**
- * main - start of program
+ * main - Start of program
  *
- * return: always 0.
-*/
-
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	char(c = 'a');
+	char c = 'a';
+
 	while (c <= 'z')
 	{
 		if (c != 'e' && c != 'q')
@@ -19,4 +19,3 @@ int main(void)
 	putchar('\n');
 	return (0);
 }
-
