@@ -16,11 +16,11 @@ int main(void)
 			{
 				putchar(i);
 				putchar(j);	
-			}
 			if (i + j != 113)
 			{
 				putchar(',');
 				putchar(' ');
+			}
 			}
 		}
 	}
