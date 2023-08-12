@@ -7,17 +7,17 @@
 int main(void)
 {
 	char cl = 'a';
-	char cu = 'A';
+	char CU = 'A';
 
 	while (cl <= 'z')
 	{
 		putchar(cl);
 		cl++;
 	}
-	while (cu <= 'Z')
+	while (CU <= 'Z')
 	{
-		putchar(cu);
-		cu++;
+		putchar(CU);
+		CU++;
 	}
 	putchat('\n');
 	return (0);
