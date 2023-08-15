@@ -3,7 +3,7 @@
  * main - Start of program 0putchar
  * Return: Always 0 (done)
  **/
-int main()
+int main(void)
 {
 	_putchar('_');
 	_putchar('p');
