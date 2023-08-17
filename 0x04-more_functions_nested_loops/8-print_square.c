@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * print_square - start of the program
  * @size: input
@@ -8,18 +7,17 @@
  */
 void print_square(int size)
 {
-	int i, j, a;
+	int i, j;
 
-	a = sqrt(size);
 	if (size <= 0)
 	{
 		_putcher('\n);
 	}
 	else
 	{
-		for (i = 0; i < a; i++)
+		for (i = 0; i < size; i++)
 		{
-			for (j = 0; j < a; j++)
+			for (j = 0; j < size; j++)
 				_putchar('#');
 			_putchar('\n');
 		}
