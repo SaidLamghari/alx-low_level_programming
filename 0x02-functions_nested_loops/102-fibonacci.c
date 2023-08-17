@@ -8,12 +8,12 @@
 int main(void)
 {
 	int c;
-	int f1 = 0, f2 = 1, s;
+	unsigned long f1 = 0, f2 = 1, s;
 
 	for (c = 0; c <= 49; c++)
 	{
 		s = f1 + f2;
-		printf("%d", s);
+		printf("%lu", s);
 		f1 = f2;
 		f2 = s;
 		if (c == 49)
