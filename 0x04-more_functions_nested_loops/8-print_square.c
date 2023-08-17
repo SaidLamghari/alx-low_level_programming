@@ -10,12 +10,18 @@ void print_square(int size)
 	int i, j, a;
 
 	a = sqrt(size);
-
-	for (i = 0; i < a; i++)
+	if (size <= 0)
 	{
-		for (j = 0; j < a; j++)
-			_putchar('#');
-		_putchar('\n');
+		_putcher('\n);
+	}
+	else
+	{
+		for (i = 0; i < a; i++)
+		{
+			for (j = 0; j < a; j++)
+				_putchar('#');
+			_putchar('\n');
+		}
 	}
 }
 
