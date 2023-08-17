@@ -1,4 +1,4 @@
-#include "main"
+#include "main.h"
 
 /*
  * int _isupper - start of program
