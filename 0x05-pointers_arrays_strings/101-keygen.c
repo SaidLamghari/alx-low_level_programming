@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 /*
  */
 char getRandomChar(const char *charset, int charsetLength) {
