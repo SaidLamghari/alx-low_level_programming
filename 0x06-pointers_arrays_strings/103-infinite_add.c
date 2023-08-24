@@ -44,7 +44,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[i] = (sum % 10) + 48;
 		i--;
 	}
-	if (carry > 0)
+	if (carry == 1)
 	{
 		r[len + 1] = '\0';
 		if ((len + 2) > size_r)
