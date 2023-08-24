@@ -8,18 +8,14 @@
 char *leet(char *le)
 {
 	int i, j;
-	char *qa = "AEOTL";
-	char *la = "aeotl";
+	char *qa = "AaEeOoTtLl";
 	char *nu = "43071";
-
 
 	for (i = 0; le[i] != '\0'; i++)
 	{
-		for (j = 0; j < 5; j++)
+		for (j = 0; j < 10; j++)
 		{
 			if (le[i] == qa[j])
-				le[i] = nu[j];
-			else if (le[i] == la[j])
 				le[i] = nu[j];
 		}
 	}
