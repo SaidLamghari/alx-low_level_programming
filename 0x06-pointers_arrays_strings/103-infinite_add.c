@@ -24,21 +24,21 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (len + 1 > size_r)
 		return (0);
 	i = len - 1;
-	i1 = len1 - 1;
-	i2 = len2 - 1;
+	i1 = len1;
+	i2 = len2;
 	r[len] = '\0';
 	while (i >= 0)
 	{
 		sum = carry;
 		if (i1 >= 0)
 		{
-			sum = sum + n1[i1] - 48;
 			i1--;
+			sum = sum + n1[i1] - 48;
 		}
 		if (i2 > 0)
 		{
-			sum = sum + n2[i2] - 48;
 			i2--;
+			sum = sum + n2[i2] - 48;
 		}
 		carry = sum / 10;
 		r[i] = (sum % 10) + 48;
