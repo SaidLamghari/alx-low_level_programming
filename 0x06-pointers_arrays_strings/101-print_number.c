@@ -5,7 +5,7 @@
  */
 void print_number(int n)
 {
-	int np;
+	unsigned int np;
 
 	np = n;
 
