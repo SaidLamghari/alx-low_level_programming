@@ -13,7 +13,7 @@ char *leet(char *le)
 	char *nu = "43071";
 
 	i = 0;
-	while (le[i])
+	while (le[i] != '\0')
 	{
 		for (j = 0; j < 5; j++)
 		{
