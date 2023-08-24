@@ -9,15 +9,16 @@ char *leet(char *le)
 {
 	int i, j;
 	char *qa = "AaEeOoTtLl";
-	char *nu = "43071";
+	char *nu = "4433007711";
 
-	for (i = 0; le[i] != '\0'; i++)
+	while (le[i])
 	{
 		for (j = 0; j < 10; j++)
 		{
 			if (le[i] == qa[j])
 				le[i] = nu[j];
 		}
+		i++;
 	}
 	return (le);
 }
