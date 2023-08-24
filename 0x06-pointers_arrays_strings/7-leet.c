@@ -1,11 +1,11 @@
 #include "main.h"
 /**
  * *leet - start of the program that encodes a string into 1337
- * @l: string
+ * @le: string
  *
  * Return: encoded string
  */
-char *leet(char *l)
+char *leet(char *le)
 {
 	int i, j;
 	char *qa = "AEOTL";
@@ -13,16 +13,16 @@ char *leet(char *l)
 	char *nu = "43071";
 
 	i = 0;
-	while (l[i])
+	while (le[i])
 	{
 		for (j = 0; j < 5; j++)
 		{
-			if (l[i] == qa[j])
-				l[i] = nu[j];
-			else if (l[i] == la[j])
-				l[i] = nu[j];
+			if (le[i] == qa[j])
+				le[i] = nu[j];
+			else if (le[i] == la[j])
+				le[i] = nu[j];
 		}
 		i++;
 	}
-	return (l);
+	return (le);
 }
