@@ -12,8 +12,8 @@ char *leet(char *le)
 	char *la = "aeotl";
 	char *nu = "43071";
 
-	i = 0;
-	while (le[i] != '\0')
+
+	for (i = 0; le[i] != '\0'; i++)
 	{
 		for (j = 0; j < 5; j++)
 		{
@@ -22,7 +22,6 @@ char *leet(char *le)
 			else if (le[i] == la[j])
 				le[i] = nu[j];
 		}
-		i++;
 	}
 	return (le);
 }
