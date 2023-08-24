@@ -11,6 +11,7 @@ char *leet(char *le)
 	char *qa = "AaEeOoTtLl";
 	char *nu = "4433007711";
 
+	i = 0;
 	while (le[i])
 	{
 		for (j = 0; j < 10; j++)
