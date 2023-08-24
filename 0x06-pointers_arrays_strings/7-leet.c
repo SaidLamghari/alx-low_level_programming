@@ -19,7 +19,7 @@ char *leet(char *l)
 		{
 			if (l[i] == qa[j])
 				l[i] = nu[j];
-			if (l[i] == la[j])
+			else if (l[i] == la[j])
 				l[i] = nu[j];
 		}
 		i++;
