@@ -9,8 +9,9 @@
  */
 int main(int argc, char **argv)
 {
-	int i = 0, cents;
+	int i, cents;
 
+	i = 0;
 	if (argc == 2)
 	{
 		cents = atoi(argv[1]);
