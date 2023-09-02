@@ -13,8 +13,11 @@ int main(int argc, char **argv)
 
 	i = 0;
 
-	if (argc == 2)
+	if (argc != 2)
 	{
+		printf("Error\n");
+		return (1);
+	}
 		cents = atoi(argv[1]);
 		if (cents <= 0)
 			printf("%d\n", 0);
@@ -28,16 +31,10 @@ int main(int argc, char **argv)
 				cents = cents - 5;
 			else if (cents >= 2)
 				cents = cents - 2;
-			else if (cents >= 1)
+			else
 				cents = cents - 1;
 			i++;
 		}
 		printf("%d\n", i);
-	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
 	return (0);
 }
