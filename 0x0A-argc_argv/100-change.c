@@ -9,15 +9,10 @@
  */
 int main(int argc, char **argv)
 {
-	int i, cents;
+	int i = 0, cents;
 
-	i = 0;
-
-	if (argc != 2)
+	if (argc == 2)
 	{
-		printf("Error\n");
-		return (1);
-	}
 		cents = atoi(argv[1]);
 		if (cents <= 0)
 			printf("%d\n", 0);
@@ -36,5 +31,11 @@ int main(int argc, char **argv)
 			i++;
 		}
 		printf("%d\n", i);
+	}
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
 	return (0);
 }
