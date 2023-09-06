@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stddef.h>
+#include <stdlib.h>
 /**
  * **strtow - Start of function that splits a string into words.
  * @str: pointer
