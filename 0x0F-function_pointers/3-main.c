@@ -1,4 +1,4 @@
-#include "3-clac.h"
+#include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -31,6 +31,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	printf("%d\n", func(a, b));
+	printf("%d\n", func(num1, num2));
 	return (0);
 }
