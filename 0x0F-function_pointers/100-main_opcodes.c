@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
 
 	if (num < 0)
 	{
-		 printf("Error\n");
-		 exit(2);
+		printf("Error\n");
+		exit(2);
 	}
 	for (i = 0; i < num; i++)
 	{
