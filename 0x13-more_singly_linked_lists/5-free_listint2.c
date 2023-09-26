@@ -8,6 +8,8 @@ void free_listint2(listint_t **head)
 {
 	listint_t *copy1, *copy2;
 
+	if (head == NULL)
+		return;
 
 	copy1 = *head;
 
