@@ -1,7 +1,8 @@
 #include "main.h"
 #include <stddef.h>
 /**
- * binary_to_uint - Start of  function that converts a binary number to an unsigned int.
+ * binary_to_uint - Start of function that converts
+ *			a binary number to an unsigned int.
  * @b: Pointing to a string of 0 and 1 chars
  * Return: The converted number, or 0
  */
