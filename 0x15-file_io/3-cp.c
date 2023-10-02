@@ -10,7 +10,7 @@
  * Return: 1 on success and -1 on failure
  */
 int main(int argc, char **argv)
-{	int from_file, to_file;
+{	int from_file = 0, to_file = 0;
 	char buffer[1024];
 	ssize_t t_r, t_w;
 
@@ -34,8 +34,8 @@ int main(int argc, char **argv)
 	if (t_r == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]), exit(98);
 	if (close(from_file) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from_file), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close(from_file)), exit(100);
 	if (close(to_file) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to_file), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close(to_file)), exit(100);
 	return (1);
 }
