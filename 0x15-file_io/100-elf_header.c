@@ -12,7 +12,7 @@
 int main(int ac, char **av)
 {
 	int file, i;
-	Elf64_Ehdr header;
+	Elf64_Ehdr *header;
 
 	if (argc != 2)
 		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n"), exit(98);
@@ -36,4 +36,6 @@ int main(int ac, char **av)
 		if(header->e_ident[EI_DATA] == ELFDATA2LSB)
 		       printf("2's complement, little endian\n");
 		else printf("2's complement, big endian\n");
+	printf("  Version:                           %d (current)\n", header->e_ident[EI_VERSION]);
+
 }
