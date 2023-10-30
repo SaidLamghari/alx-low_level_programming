@@ -6,14 +6,18 @@
 #include <stdint.h>
 #include <elf.h>
 
+#include "main.h"
+
 #define BUFFER_SIZE 128
 
-void print_error(const char *message) {
+void print_error(const char *message)
+{
     fprintf(stderr, "%s\n", message);
     exit(98);
 }
 
-void print_magic(const unsigned char *magic) {
+void print_magic(const unsigned char *magic)
+{
     printf("  Magic:   ");
     for (int i = 0; i < EI_NIDENT; i++) {
         printf("%02x ", magic[i]);
@@ -21,7 +25,8 @@ void print_magic(const unsigned char *magic) {
     printf("\n");
 }
 
-void print_class(uint8_t class) {
+void print_class(uint8_t class)
+{
     printf("  Class:                             ");
     switch (class) {
         case ELFCLASS32:
@@ -36,7 +41,8 @@ void print_class(uint8_t class) {
     }
 }
 
-void print_data(uint8_t data) {
+void print_data(uint8_t data)
+{
     printf("  Data:                              ");
     switch (data) {
         case ELFDATA2LSB:
@@ -51,11 +57,13 @@ void print_data(uint8_t data) {
     }
 }
 
-void print_version(uint8_t version) {
+void print_version(uint8_t version)
+{
     printf("  Version:                           %d (current)\n", version);
 }
 
-void print_osabi(uint8_t osabi) {
+void print_osabi(uint8_t osabi)
+{
     printf("  OS/ABI:                            ");
     switch (osabi) {
         case ELFOSABI_SYSV:
@@ -73,11 +81,13 @@ void print_osabi(uint8_t osabi) {
     }
 }
 
-void print_abi_version(uint8_t abi_version) {
+void print_abi_version(uint8_t abi_version)
+{
     printf("  ABI Version:                       %d\n", abi_version);
 }
 
-void print_type(uint16_t type) {
+void print_type(uint16_t type)
+{
     printf("  Type:                              ");
     switch (type) {
         case ET_NONE:
@@ -101,23 +111,29 @@ void print_type(uint16_t type) {
     }
 }
 
-void print_entry(uint64_t entry) {
+void print_entry(uint64_t entry)
+{
     printf("  Entry point address:               %#lx\n", entry);
 }
 
-void display_elf_header(const char *filename) {
-    int fd = open(filename, O_RDONLY);
+void display_elf_header(const char *filename)
+{
+	int fd;
+	ssize_t bytes_read;
+    fd = open(filename, O_RDONLY);
     if (fd == -1) {
         print_error("Error opening file");
     }
 
     Elf64_Ehdr header;
-    ssize_t bytes_read = read(fd, &header, sizeof(header));
-    if (bytes_read == -1) {
+    bytes_read = read(fd, &header, sizeof(header));
+    if (bytes_read == -1)
+    {
         print_error("Error reading file");
     }
 
-    if (bytes_read != sizeof(header)) {
+    if (bytes_read != sizeof(header))
+    {
         print_error("Invalid ELF header");
     }
 
@@ -133,7 +149,8 @@ void display_elf_header(const char *filename) {
     close(fd);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     if (argc != 2) {
         print_error("Usage: elf_header elf_filename");
     }
