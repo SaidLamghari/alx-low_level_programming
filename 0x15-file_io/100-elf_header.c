@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+
+
+
 typedef struct {
     unsigned char e_ident[16];
     uint16_t e_type;
@@ -19,10 +22,16 @@ typedef struct {
     uint16_t e_shstrndx;
 } Elf64_Ehdr;
 
-void print_header_info(Elf64_Ehdr header) {
+void print_header_info(Elf64_Ehdr header);
+int main(int argc, char *argv[]);
+
+
+void print_header_info(Elf64_Ehdr header)
+{
+	int i;
     printf("ELF Header:\n");
     printf("  Magic:   ");
-    for (int i = 0; i < 16; i++) {
+    for (i = 0; i < 16; i++) {
         printf("%02x ", header.e_ident[i]);
     }
     printf("\n");
@@ -41,13 +50,16 @@ void print_header_info(Elf64_Ehdr header) {
     printf("  Section header string table index:  %hu\n", header.e_shstrndx);
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
+	FILE *file;
+
     if (argc < 2) {
         printf("Usage: %s <elf_file>\n", argv[0]);
         return 1;
     }
 
-    FILE *file = fopen(argv[1], "rb");
+    file = fopen(argv[1], "rb");
     if (file == NULL) {
         printf("Error: Cannot open file %s\n", argv[1]);
         return 1;
