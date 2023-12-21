@@ -19,14 +19,15 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 
 
-	copy->array = malloc(sizeof(hiash_node_t *) * size);
+	copy->array = malloc(sizeof(hash_node_t *) * size);
 	if (copy->array == NULL)
 	{
-		free(copy), return (NULL);
+		free(copy);
+		return (NULL);
 	}
 
 
-	i = 0;
+	count = 0;
 	while (count < size)
 	{
 		copy->array[count] = NULL;
