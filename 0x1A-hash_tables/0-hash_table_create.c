@@ -27,6 +27,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 		copy->array[count] = NULL;
 		count++;
 	}
-	ht->size = size;
 	return (copy);
 }
