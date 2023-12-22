@@ -10,22 +10,17 @@ hash_table_t *hash_table_create(unsigned long int size)
 	unsigned long int count;
 	hash_table_t *copy;
 
-
 	copy = malloc(sizeof(hash_table_t));
 	if (copy == NULL)
 	{
 		return (NULL);
 	}
-
-
 	copy->array = malloc(sizeof(hash_node_t *) * size);
 	if (copy->array == NULL)
 	{
 		free(copy);
 		return (NULL);
 	}
-
-
 	count = 0;
 	while (count < size)
 	{
