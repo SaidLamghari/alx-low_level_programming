@@ -7,7 +7,7 @@ SRC := main.c school.c
 # Default target
 all: school
 # Target to build
-school: $(SRC)
+school:
 	$(CC) $(SRC) -o school
 
 .PHONY: all
