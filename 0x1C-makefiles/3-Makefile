@@ -1,0 +1,27 @@
+# My second useful Makefile
+
+# The compiler to be used
+CC = gcc
+# The .c files
+SRC = main.c school.c
+# The .o files
+OBJ = $(SRC:.c=.o)
+# The name of the executable
+NAME = school
+# The program to delete files
+RM = rm -f
+
+# The all rule should recompile only the updated source files
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# The clean, oclean, fclean, re rules should never fail
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
