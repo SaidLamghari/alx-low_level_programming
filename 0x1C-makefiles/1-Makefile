@@ -1,5 +1,4 @@
 # My second Makfile
-# The compiler to be used
 CC := gcc
 SRC := main.c school.c
 
