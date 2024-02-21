@@ -1,35 +1,35 @@
-# My advanced useful Makefile
-
-# The compiler to be used
+# Compiler and compiler flags
 CC = gcc
-# The .c files
-SRC = main.c school.c
-# The .o files
-OBJ = $(SRC:.c=.o)
-# The name of the executable
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Source files
+SRC = $(wildcard *.c)
+
+# Name of the executable
 NAME = school
-# The program to delete files
+
+# Cleaning program
 RM = rm -f
-#  compiler flags: -Wall -Werror -Wextra -pedantic
-CFLAGS := -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean fclean re
 
-# The all rule should recompile only the updated source files
-all: $(OBJ) m.h
-	$(CC) $(CFLAGS) -o $@ $^
+# Default rule to build the executable
+all: $(NAME)
 
-# The clean, oclean, fclean, re rules should never fail
+# Rule to build the executable
+$(NAME): $(SRC) m.h
+	$(CC) $(CFLAGS) -o $@ $<
+
+# Rule to clean Emacs and Vim temporary files along with the executable
 clean:
 	$(RM) *~ $(NAME)
 
+# Rule to delete the object files
 oclean:
-	$(RM) $(OBJ)
+	$(RM) $(patsubst %.c, %.o, $(SRC))
 
+# Rule to delete Emacs and Vim temporary files, the executable, and the object files
 fclean: clean oclean
 
+# Rule to force recompilation of all source files
 re: fclean all
-
-m.h:
-	@echo "Error: m.h header file is missing"
-	@exit 1
