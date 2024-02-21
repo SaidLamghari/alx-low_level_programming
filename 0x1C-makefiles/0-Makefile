@@ -1,2 +1,3 @@
-all: main.c school.c
+# My first Makfile
+all:
 	gcc main.c school.c -o school
