@@ -1,10 +1,8 @@
 # My second Makfile
-
 # The compiler to be used
 CC := gcc
 # The .c files
 SRC := main.c school.c
-
 # Target to build
 all: $(SRC)
 	$(CC) $(SRC) -o school
