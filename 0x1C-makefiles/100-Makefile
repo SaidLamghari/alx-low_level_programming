@@ -1,0 +1,32 @@
+# My advanced useful Makefile
+
+# The compiler to be used
+CC = gcc
+# The .c files
+SRC = $(wildcard *.c)
+# The .o files
+OBJ = $(SRC:.c=.o)
+# The name of the executable
+NAME = school
+# compiler flags: -Wall -Werror -Wextra -pedantic
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+.PHONY: all clean oclean fclean re
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+$(OBJ): %.o: %.c m.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	-$(RM) $(NAME)
+
+oclean:
+	-$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
