@@ -17,7 +17,7 @@ CFLAGS := -Wall -Werror -Wextra -pedantic
 
 # The all rule should recompile only the updated source files
 all: $(OBJ) m.h
-	$(CC) $(CFLAGS) -o $@ $^
+    $(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 # The clean, oclean, fclean, re rules should never fail
 clean:
@@ -28,10 +28,11 @@ oclean:
 	$(RM) $(OBJ)
 
 # Rule to delete Emacs and Vim temporary files, the executable, and the object files
-fclean: clean oclean
+fclean:
+	$(RM) *~ $(NAME) $(OBJ)
 
 # Rule to force recompilation of all source files
-re: fclean all
+re: fclean all 
 
 m.h:
 	@echo "Error: m.h header file is missing"
