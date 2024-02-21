@@ -3,26 +3,26 @@
 # The compiler to be used
 CC = gcc
 # The .c files
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 # The .o files
 OBJ = $(SRC:.c=.o)
 # The name of the executable
 NAME = school
-# compiler flags: -Wall -Werror -Wextra -pedantic
-CFLAGS = -Wall -Werror -Wextra -pedantic
+# The program to delete files
+RM = rm -f
+#  compiler flags: -Wall -Werror -Wextra -pedantic
+CFLAGS := -Wall -Werror -Wextra -pedantic
 
-
-all: $(OBJ)
+# The all rule should recompile only the updated source files
+all: $(OBJ) m.h
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
-$(OBJ): %.o: %.c m.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
+# The clean, oclean, fclean, re rules should never fail
 clean:
-	-$(RM) $(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
-	-$(RM) $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean oclean
 
