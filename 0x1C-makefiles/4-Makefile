@@ -11,11 +11,11 @@ NAME = school
 # The program to delete files
 RM = rm -f
 #  compiler flags: -Wall -Werror -Wextra -pedantic
-CFLAGS := -Wall -Werror -Wextra -pedantic
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # The all rule should recompile only the updated source files
 all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 # The clean, oclean, fclean, re rules should never fail
 clean:
