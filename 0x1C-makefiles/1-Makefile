@@ -4,10 +4,7 @@
 CC := gcc
 # The .c files
 SRC := main.c school.c
-# Default target
-all: school
-# Target to build
-school:
-	$(CC) $(SRC) -o school
 
-.PHONY: all
+# Target to build
+all:
+	$(CC) $(SRC) -o school
