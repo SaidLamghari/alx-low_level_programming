@@ -13,11 +13,8 @@ OBJ = $(SRC:.c=.o)
 
 .PHONY: all clean fclean oclean re
 
-# The all rule should recompile only the updated source files
-all: $(NAME)
-
 # Rule to build the executable based on object file dependencies
-$(NAME): $(OBJ) m.h
+all: $(OBJ) m.h
 	$(CC) $(CFLAGS) -o $@ $^
 
 # Rule to build object files
