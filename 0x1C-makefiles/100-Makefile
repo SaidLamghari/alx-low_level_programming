@@ -11,7 +11,7 @@ NAME = school
 # The program to delete files
 RM = rm -f
 #  compiler flags: -Wall -Werror -Wextra -pedantic
-CFLAGS := -Wall -Werror -Wextra -pedantic
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean fclean re
 
