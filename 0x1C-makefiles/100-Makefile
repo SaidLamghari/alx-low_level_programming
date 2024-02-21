@@ -29,3 +29,7 @@ oclean:
 fclean: clean oclean
 
 re: fclean all
+
+m.h:
+	@echo "Error: m.h header file is missing"
+	@exit 1
