@@ -32,7 +32,3 @@ fclean: clean oclean
 
 # Rule to force recompilation of all source files
 re: fclean all 
-
-m.h:
-	@echo "Error: m.h header file is missing"
-	@exit 1
